@@ -17,7 +17,7 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s1.png" alt />
+                    <img src="images/airconditioner.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
@@ -32,7 +32,7 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s2.png" alt />
+                    <img src="images/windowac.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
@@ -47,7 +47,7 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s3.png" alt />
+                    <img src="images/portableac.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
@@ -62,7 +62,7 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s4.png" alt />
+                    <img src="images/aircurtain.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>

@@ -16,7 +16,7 @@ function Doctors(){
             <div className="col-sm-6 col-lg-4 mx-auto">
               <div className="box">
                 <div className="img-box">
-                  <img src="images/d1.jpg" alt />
+                  <img src="images/male-technician.avif" alt />
                 </div>
                 <div className="detail-box">
                   <div className="social_box">
@@ -37,7 +37,7 @@ function Doctors(){
                     Elina Josh
                   </h5>
                   <h6 className>
-                    Doctor
+                  Technician
                   </h6>
                 </div>
               </div>
@@ -45,7 +45,7 @@ function Doctors(){
             <div className="col-sm-6 col-lg-4 mx-auto">
               <div className="box">
                 <div className="img-box">
-                  <img src="images/d2.jpg" alt />
+                  <img src="images/360.jpg" alt />
                 </div>
                 <div className="detail-box">
                   <div className="social_box">
@@ -66,7 +66,7 @@ function Doctors(){
                     Adam View
                   </h5>
                   <h6 className>
-                    Doctor
+                  Technician
                   </h6>
                 </div>
               </div>
@@ -74,7 +74,7 @@ function Doctors(){
             <div className="col-sm-6 col-lg-4 mx-auto">
               <div className="box">
                 <div className="img-box">
-                  <img src="images/d3.jpg" alt />
+                  <img src="images/hvac-technician.avif" alt />
                 </div>
                 <div className="detail-box">
                   <div className="social_box">
@@ -95,7 +95,7 @@ function Doctors(){
                     Mia Mike
                   </h5>
                   <h6 className>
-                    Doctor
+                    Technician
                   </h6>
                 </div>
               </div>

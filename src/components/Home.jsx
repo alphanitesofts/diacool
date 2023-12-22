@@ -16,7 +16,7 @@ function Home(){
       <>
         <div className="hero_area">
         <div className="hero_bg_box">
-          <img src="images/hero-bg.png" alt />
+          <img src="images/banner4.png" alt />
         </div>
         {/* header section strats */}
         {/* <header className="header_section">
