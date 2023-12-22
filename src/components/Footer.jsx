@@ -94,10 +94,8 @@ function Footer(){
           </div>
           <div className="footer-info">
             <p>
-              © <span id="displayYear" /> All Rights Reserved By
-              <a href="https://html.design/">Free Html Templates<br /><br /></a>
-              © <span id="displayYear" /> Distributed By
-              <a href="https://themewagon.com/">ThemeWagon</a>
+              © <span id="displayYear" /> 2014 Copyright All Rights Reserved By
+              <a href="https://html.design/">Diacool</a>
             </p>
           </div>  
         </div>
