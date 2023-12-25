@@ -1,5 +1,6 @@
 import React from "react";
 import '../ExtraTwo/ExtraTwo.css'
+import GirlSpeaking from '../../Image/GirlSpeaking.jpg'
 function ExtraTwo(){
     return(
 <section id="about-section" className="pt-5 pb-5">
@@ -27,7 +28,7 @@ function ExtraTwo(){
       </div>
       <div className="col-lg-6 mt-5 mt-lg-0">
         <figure className="potoaboutwrap">
-          <img src="https://bootdey.com/image/400x700/FF7F50/000000" alt="potoabout" />
+          <img src={GirlSpeaking} style={{width: '400px', height: '700px'}} alt="potoabout" />
         </figure>
       </div>
     </div>

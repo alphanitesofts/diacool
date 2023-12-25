@@ -1,5 +1,6 @@
 import React from "react";
 import '../OurRecord/OurRecord.css'
+import since from '../../Image/since.jpg'
 function OurRecord(){
     return(
       <section className="section about-section gray-bg" id="about">
@@ -52,7 +53,7 @@ function OurRecord(){
       </div>
       <div className="col-lg-6">
         <div className="about-avatar">
-          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title alt />
+          <img src={since} title alt />
         </div>
       </div>
     </div>

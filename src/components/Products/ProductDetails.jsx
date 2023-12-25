@@ -7,7 +7,7 @@ const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
 
 const ProductDetails = () => {
     const { productId } = useParams();
-    const [product, setProduct] = useState();
+    const [product, setProduct] = useState("");
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [showMagnifier, setShowMagnifier] = useState(false);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -87,7 +87,7 @@ const ProductDetails = () => {
     return (
         <>
         {
-            product &&
+            product !== "" &&
             <section className="product-display" data-title="36000-btus-split-air-conditioners-eforce-series">
                 <div className="container-fluid">
                     <div className="row">
@@ -235,7 +235,7 @@ const ProductDetails = () => {
             </section > 
         }
             
-            {product &&
+            {product !== ""&&
                 <Specification product={product} />
             }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import '../ChooseUs/ChooseUs.css'
+import Ac from '../../Image/AC.jpg'
 function ChooseUs(){
     return(
     <div className="container">
@@ -28,7 +29,7 @@ function ChooseUs(){
     </div>
     <div className="col-lg-4 d-none d-lg-block">
       <div className="why-choose-center-image">
-        <img src="https://www.bootdey.com/image/350x350/FF7F50/000000" alt="..." className="rounded-circle" />
+      <img src={Ac} style={{width: '350px', height: '350px'}} alt="..." className="rounded-circle" />
       </div>
     </div>
     <div className="col-sm-6 col-lg-4">
