@@ -11,37 +11,37 @@ function Footer(){
                   Reach at..
                 </h4>
                 <div className="contact_link_box">
-                  <a href>
+                  <a href="geo:0,0?q=Amman+Street+-+Industrial+Area+2+-+Anjman">
                     <i className="fa fa-map-marker" aria-hidden="true" />
                     <span>
-                      Location
+                      Amman Street - Industrial Area 2 - Anjman
                     </span>
                   </a>
-                  <a href>
+                  <a href="tel:+971505735436">
                     <i className="fa fa-phone" aria-hidden="true" />
                     <span>
-                      Call +01 1234567890
+                      Call +971505735436
                     </span>
                   </a>
-                  <a href>
+                  <a href="mailto:Diakoolairconditioners@gmail.com">
                     <i className="fa fa-envelope" aria-hidden="true" />
                     <span>
-                      demo@gmail.com
+                    Diakoolairconditioners@gmail.com
                     </span>
                   </a>
                 </div>
               </div>
               <div className="footer_social">
-                <a href>
+                <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">
                   <i className="fa fa-facebook" aria-hidden="true" />
                 </a>
-                <a href>
-                  <i className="fa fa-twitter" aria-hidden="true" />
+                <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">
+                  <i className="fa fa-youtube" aria-hidden="true" style={{ color: "white" }}/>
                 </a>
-                <a href>
+                <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">
                   <i className="fa fa-linkedin" aria-hidden="true" />
                 </a>
-                <a href>
+                <a href="https://www.instagram.com/diakool_airconditioners/" target="_blank">
                   <i className="fa fa-instagram" aria-hidden="true" />
                 </a>
               </div>
@@ -86,7 +86,7 @@ function Footer(){
               </h4>
               <form action="#">
                 <input type="email" placeholder="Enter email" />
-                <button type="submit">
+                <button type="submit" className="text-light">
                   Subscribe
                 </button>
               </form>

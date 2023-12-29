@@ -1,291 +1,305 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
+import FetchSpecifications from './FetchSpecification';
+import FetchKeyFeatures from './FetchKeyFeatures';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
 const Specification = ({product}) => {
     const [selected,setSelected]=useState("Keys")
+    const[specification,setSpecification] = useState('');
+    const[key_features,setKey_features] = useState('');
+    async function FetchSpecification() {
+        try {
+            const data = await FetchSpecifications(product.id);
+            if (data !== null) {
+                setSpecification(data?.Specification);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+    async function FetchKeyFeature() {
+        try {
+            const data = await FetchKeyFeatures(product.id);
+            if (data !== null) {
+                setKey_features(data?.key_features);
+                console.log(data);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    useEffect(() => {
+        FetchSpecification();
+        FetchKeyFeature();
+    }, []);
+    
     return (
-        <section class="specification-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="product-spec">
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <section className="specification-section" >
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <nav className="product-spec">
+                            <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button
                                 onClick={()=> setSelected("Keys")}
-                                class={selected=== "Keys" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab" >Key Features</button>
+                                className={selected=== "Keys" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab" >Key Features</button>
                                 <button 
                                 onClick={()=> setSelected("Specifications")}
-                                class={selected=== "Specifications" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab"> Specifications</button>
+                                className={selected=== "Specifications" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab"> Specifications</button>
                                 <button 
                                onClick={()=> setSelected("Support")}
-                               class={selected=== "Support" ? "nav-link active":"nav-link"}   data-bs-toggle="tab"  type="button" role="tab" >Support</button>
+                               className={selected=== "Support" ? "nav-link active support":"nav-link support"}   data-bs-toggle="tab"  type="button" role="tab" >Support</button>
                                 <button 
                                 onClick={()=> setSelected("Buy")}
 
-                                class={selected=== "Buy" ? "nav-link active":"nav-link"}   data-bs-toggle="tab"  type="button" role="tab" >Where to Buy</button>
+                                className={selected=== "Buy" ? "nav-link active support":"nav-link support"}   data-bs-toggle="tab"  type="button" role="tab" >Where to Buy</button>
                             </div>
                         </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class={ selected === "Keys"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
-                                <div class="key-feature key-feature-100">
-                                    {product?.key_features &&
-                                    product.key_features.map((item, index) =>(
-                                    <div class="key-feature-box key-feature-box-50">
-                                        <div class="key-feature-box-img">
-                                            <img src={`${imageUrl}${item.image}`} class="img-fluid lazyload" alt="4 Way Swing" />
+                        <div className="tab-content" id="nav-tabContent" >
+                            <div className={ selected === "Keys"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
+                                <div className="key-feature key-feature-100">
+                                    
+                                    <div className="key-feature-box key-feature-box-50" id='printablediv'>
+                                        <div className="key-feature-box-img">
+                                            <img src={`${imageUrl}${key_features.image}`} className="img-fluid lazyload" alt="4 Way Swing" />
                                         </div>
-                                        <div class="key-feature-box-content">
-                                            <h5>{item.name}</h5>
-                                        </div>
-                                    </div>
-                                    ))
-                                    }
-                                </div>
-                            </div>
-
-                            <div  class={ selected === "Specifications"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
-                                <div class="specification">
-                                    {
-                                        product?.specifications &&
-                                        product?.specifications?.map((item,index)=>(
-                                            <div class="specification-box" key={index}>
-                                        <div class="specification-box-name">
-                                            <h6>{item.name}</h6>
-                                        </div>
-                                        <div class="specification-box-units">
-                                            <h6>{item.value}</h6>
-                                        </div>
-                                    </div>
-                                        ))
-                                    }
-                                </div>
-                            </div>
-
-                            <div  class={ selected === "Support"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
-                                <div class="key-feature">
-                                    <div class="key-feature-box">
-                                        <div class="key-feature-box-img">
-                                            <img src="/phone.webp" class="img-fluid lazyload" alt="phone" />
-                                        </div>
-                                        <div class="key-feature-box-content">
-                                            <h5><a href="tel:+971600544333">600 544 333</a></h5>
-                                        </div>
-                                    </div>
-                                    <div class="key-feature-box">
-                                        <div class="key-feature-box-img">
-                                            <img src="/whatsapp.webp" class="img-fluid lazyload" alt="whatsapp" />
-                                        </div>
-                                        <div class="key-feature-box-content">
-                                            <h5><a href="https://wa.me/+971600544333"> 600 544 333</a></h5>
-                                        </div>
-                                    </div>
-                                    <div class="key-feature-box">
-                                        <div class="key-feature-box-img">
-                                            <img src="/email.webp" class="img-fluid lazyload" alt="email" />
-                                        </div>
-                                        <div class="key-feature-box-content">
-                                            <h5><a href="mailto:Service_geco@gecouae.ae">Service_geco@gecouae.ae</a></h5>
+                                        <div className="key-feature-box-content">
+                                            <h5>{key_features.name}</h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div  class={ selected === "Buy"? "tab-pane fade active show":"tab-pane fade"} role="tabpanel" >
+                            <div  className={ selected === "Specifications"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
+                                <div className="specification">
+                                            <div className="specification-box" >
+                                        <div className="specification-box-name" id='printablediv'>
+                                            <h6>{specification.name}</h6>
+                                        </div>
+                                        <div className="specification-box-units">
+                                            <h6>{specification.value}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  className={ selected === "Support"? "tab-pane fade active show support":"tab-pane fade support"}  role="tabpanel" >
+                                <div className="key-feature">
+                                    <div className="key-feature-box">
+                                        <div className="key-feature-box-img">
+                                            <img src="/images/callIcon.webp" className="img-fluid lazyload" alt="phone" />
+                                        </div>
+                                        <div className="key-feature-box-content">
+                                            <h5><a href="tel:+971505735436">+971505735436</a></h5>
+                                        </div>
+                                    </div>
+                                    <div className="key-feature-box">
+                                        <div className="key-feature-box-img">
+                                            <img src="/images/whatsapp.webp" className="img-fluid lazyload" alt="whatsapp" />
+                                        </div>
+                                        <div className="key-feature-box-content">
+                                            <h5><a href="https://wa.me/+971505735436"> +971505735436</a></h5>
+                                        </div>
+                                    </div>
+                                    <div className="key-feature-box">
+                                        <div className="key-feature-box-img">
+                                            <img src="/images/email.webp" className="img-fluid lazyload" alt="email" />
+                                        </div>
+                                        <div className="key-feature-box-content">
+                                            <h5><a href="mailto:Diakoolairconditioners@gmail.com">Diakoolairconditioners@gmail.com</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  className={ selected === "Buy"? "tab-pane fade active show support":"tab-pane fade support"} role="tabpanel" >
                                 <h4>KEY OUTLETS</h4>
-                                <div class="col-keyout">
-                                    <div class="col-key">
+                                <div className="col-keyout">
+                                    <div className="col-key">
                                         <ul>
-                                            <li>Ansar Group</li>
-                                            <li>Carrefour</li>
-                                            <li>Emax</li>
-                                            <li>Ecity</li>
+                                            <li>AL BAHRI WAREHOUSE # 16 AL ASAYEL STREET AL QUOZ IND 2 – DUBAI – UAE</li>
                                         </ul>
                                     </div>
-                                    <div class="col-key">
-                                        <ul>
+                                    <div className="col-key">
+                                        {/* <ul>
                                             <li>KM Trading</li>
                                             <li>Lulu</li>
                                             <li>Nesto</li>
                                             <li>Safeer</li>
-                                        </ul>
+                                        </ul> */}
                                     </div>
-                                    <div class="col-key">
+                                    <div className="col-key">
                                         <ul>
-                                            <li>Sharaf DG</li>
-                                            <li>Sharjah Cooperative</li>
-                                            <li>Union Cooperative</li>
+                                            <li>Amman Street - Industrial Area 2 - Anjman</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <h4>BUY ONLINE</h4>
-                                <div class="online-flex">
-                                    <div class="online-col">
-                                        <img src="https://www.supergeneral.com/public/images/amazon.webp" class="img-fluid lazyload" alt="Amazon" />
+                                <div className="online-flex">
+                                    <div className="online-col">
+                                        <img src="/images/whatsapp.png" className="img-fluid lazyload" alt="whatsapp" />
                                         <a href="#" target="_blank">Buy Now</a>
                                     </div>
-                                    <div class="online-col">
-                                        <img src="https://www.supergeneral.com/public/images/sharaf-dg.webp" class="img-fluid lazyload" alt="Sharaf DG" />
-                                        <a href="#" target="_blank">Buy Now</a>
+                                    <div className="online-col ml-1">
+                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
+                                        <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
                                     </div>
-                                    <div class="online-col">
-                                        <img src="https://www.supergeneral.com/public/images/noon.webp" class="img-fluid lazyload" alt="Noon" />
-                                        <a href="#" target="_blank">Buy Now</a>
+                                    <div className="online-col ml-1">
+                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
+                                        <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
                                     </div>
-                                    <div class="online-col">
-                                        <img src="https://www.supergeneral.com/public/images/carrefour.webp" class="img-fluid lazyload" alt="Carrefour" />
-                                        <a href="#" target="_blank">Buy Now</a>
-                                    </div>
-                                    <div class="online-col">
-                                        <img src="https://www.supergeneral.com/public/images/lulu.webp" class="img-fluid lazyload" alt="Lulu" />
-                                        <a href="#" target="_blank">Buy Now</a>
+                                    <div className="online-col ml-1">
+                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
+                                        <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
                                     </div>
                                 </div>
-                                <div class="d-none">
-                                    <div class="showroom-box-row">
-                                        <div class="showroom-box">
-                                            <div class="showroom-box-city">
+                                {/* <div className="d-none">
+                                    <div className="showroom-box-row">
+                                        <div className="showroom-box">
+                                            <div className="showroom-box-city">
                                                 <h3>DUBAI</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">MPC Building, Airport Road, Near Cargo Village,<br /> P.O. Box No: 51027, Dubai, UAE.</div>
+                                                    <div className="showroom-flex-text">MPC Building, Airport Road, Near Cargo Village,<br /> P.O. Box No: 51027, Dubai, UAE.</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2501230</div>
+                                                    <div className="showroom-flex-text">04-2501230</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2501265</div>
+                                                    <div className="showroom-flex-text">04-2501265</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="showroom-box">
-                                            <div class="showroom-box-city border-right-0">
+                                        <div className="showroom-box">
+                                            <div className="showroom-box-city border-right-0">
                                                 <h3>DUBAI</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">Behind Sabkha Bus Station,<br /> Fikree Market, Deira – Dubai, UAE.</div>
+                                                    <div className="showroom-flex-text">Behind Sabkha Bus Station,<br /> Fikree Market, Deira – Dubai, UAE.</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2252682</div>
+                                                    <div className="showroom-flex-text">04-2252682</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2265793</div>
+                                                    <div className="showroom-flex-text">04-2265793</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="showroom-box">
-                                            <div class="showroom-box-city">
+                                        <div className="showroom-box">
+                                            <div className="showroom-box-city">
                                                 <h3>DUBAI</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">Behind Sabkha Bus Station, Back Side of <br /> Grand Sina Hotel, Fikree Market, Deira – Dubai, UAE.</div>
+                                                    <div className="showroom-flex-text">Behind Sabkha Bus Station, Back Side of <br /> Grand Sina Hotel, Fikree Market, Deira – Dubai, UAE.</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2252936</div>
+                                                    <div className="showroom-flex-text">04-2252936</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">04-2252049</div>
+                                                    <div className="showroom-flex-text">04-2252049</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="showroom-box">
-                                            <div class="showroom-box-city border-right-0">
+                                        <div className="showroom-box">
+                                            <div className="showroom-box-city border-right-0">
                                                 <h3>SHARJAH</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">Al Arooba Building, Opposite of Al Ansari Exchange,<br /> Next to Manama Supermarket, Rolla – Sharjah, UAE.</div>
+                                                    <div className="showroom-flex-text">Al Arooba Building, Opposite of Al Ansari Exchange,<br /> Next to Manama Supermarket, Rolla – Sharjah, UAE.</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">06-5680255</div>
+                                                    <div className="showroom-flex-text">06-5680255</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">06-5680688</div>
+                                                    <div className="showroom-flex-text">06-5680688</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="showroom-box mb-0">
-                                            <div class="showroom-box-city border-right-0 border-bottom-0">
+                                        <div className="showroom-box mb-0">
+                                            <div className="showroom-box-city border-right-0 border-bottom-0">
                                                 <h3>ABU DHABI</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">Building – 188, Shabia – 10, Next To Pure Veg <br />Restaurant, Nearby Al Jazeera Medical Centre<br /> Bus Stop, Musaffah, Abudhabi.</div>
+                                                    <div className="showroom-flex-text">Building – 188, Shabia – 10, Next To Pure Veg <br />Restaurant, Nearby Al Jazeera Medical Centre<br /> Bus Stop, Musaffah, Abudhabi.</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">02-4476047</div>
+                                                    <div className="showroom-flex-text">02-4476047</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="d-none">
-                                    <div class="showroom-box-row">
-                                        <div class="showroom-box">
-                                            <div class="showroom-box-city">
+                                </div> */}
+                                {/* <div className="d-none">
+                                    <div className="showroom-box-row">
+                                        <div className="showroom-box">
+                                            <div className="showroom-box-city">
                                                 <h3>SHOWROOM</h3>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/location.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">Musannah – Tareef, Oman</div>
+                                                    <div className="showroom-flex-text">Musannah – Tareef, Oman</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/call.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">00968 26869724</div>
+                                                    <div className="showroom-flex-text">00968 26869724</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/telephone.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">00968 26970080</div>
+                                                    <div className="showroom-flex-text">00968 26970080</div>
                                                 </div>
-                                                <div class="showroom-flex">
-                                                    <div class="showroom-flex-icon">
-                                                        <img data-src="https://supergeneral.com/public/images/icon/mail.png" class="img-fluid lazyload" />
+                                                <div className="showroom-flex">
+                                                    <div className="showroom-flex-icon">
+                                                        <img data-src="https://supergeneral.com/public/images/icon/mail.png" className="img-fluid lazyload" />
                                                     </div>
-                                                    <div class="showroom-flex-text">sgcmusannah@supergeneral.ae</div>
+                                                    <div className="showroom-flex-text">sgcmusannah@supergeneral.ae</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

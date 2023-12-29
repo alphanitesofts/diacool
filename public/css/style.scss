@@ -1,7 +1,7 @@
 $white: #ffffff;
 $black: #000000;
-$primary1: #0dcaf0;
-$primary2: #0594b0;
+$primary1: rgba(28, 63, 148);
+$primary2: rgba(28, 63, 148);
 $textCol: #1f1f1f;
 
 // import fonts - font-family: 'Nunito', sans-serif;
@@ -674,14 +674,14 @@ a:focus {
 
       a {
         margin: 5px 0;
-        color: $white;
+        color: #fefefe;
 
         i {
           margin-right: 5px;
         }
 
         &:hover {
-          color: $primary1;
+          color: #ffffff;
         }
       }
     }
@@ -702,7 +702,7 @@ a:focus {
       font-size: 24px;
 
       &:hover {
-        color: $primary1;
+        color: #ffffff;
       }
     }
   }
@@ -719,7 +719,7 @@ a:focus {
       color: $white;
 
       &:hover {
-        color: $primary1;
+        color: #fff;
       }
     }
   }

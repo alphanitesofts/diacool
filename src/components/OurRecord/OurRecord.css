@@ -1,5 +1,5 @@
 body{
-    color: #6F8BA4;
+    color: rgba(28, 63, 148);
     margin-top:20px;
 }
 .section {
@@ -89,7 +89,7 @@ img {
 
 .about-section .counter {
   padding: 22px 20px;
-  background: #0dcaf0;
+  background: rgba(28, 63, 148);
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
 }
@@ -107,7 +107,7 @@ img {
   margin: 0;
 }
 mark {
-    background-image: linear-gradient(#0dcaf0, #0dcaf0);
+    background-image: linear-gradient(rgba(28, 63, 148), rgba(28, 63, 148));
     background-size: 100% 3px;
     background-repeat: no-repeat;
     background-position: 0 bottom;
@@ -119,5 +119,5 @@ mark {
     color: #047a91;
 }
 .dark-color {
-    color: #0dcaf0;
+    color: rgba(28, 63, 148);
 }

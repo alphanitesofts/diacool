@@ -793,7 +793,7 @@ a:focus {
 }
 
 .footer_section .footer_contact .contact_link_box a:hover {
-  color: rgba(28, 63, 148);
+  color: #ffffff;
 }
 
 .footer_section .footer_social {
@@ -821,7 +821,7 @@ a:focus {
 }
 
 .footer_section .footer_social a:hover {
-  color: rgba(28, 63, 148);
+  color: #fff;
 }
 
 .footer_section .footer_links {
@@ -845,7 +845,7 @@ a:focus {
 }
 
 .footer_section .footer_links a:hover {
-  color: rgba(28, 63, 148);
+  color: #ffffff;
 }
 
 .footer_section form input {
@@ -891,7 +891,7 @@ a:focus {
 
 .footer_section form button:hover {
   background-color: transparent;
-  color: rgba(28, 63, 148);
+  color: #ffffff;
 }
 
 .footer_section .footer-info {
@@ -907,4 +907,5 @@ a:focus {
 .footer_section .footer-info p a {
   color: inherit;
 }
+
 /*# sourceMappingURL=style.css.map */

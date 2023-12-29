@@ -14,19 +14,27 @@ function NavBar() {
   return (
     <div>
   <div className="container-fluid banner" style={{ backgroundColor: "rgba(28, 63, 148)", height: "25%",marginTop:-20 }}>
-        <div className="row align-items-center">
+        <div className="row align-items-center support">
           {/* <div className="col-12">
             <p className="text-white text-center">
               We are the top-selling brand in UAE
             </p>
           </div> */}
           {/* Social Icons */}
-          <div className="col-12 text-right">
+          <div className="col-12 text-right ">
             {/* Add your social icons here */}
-            <i className="fa fa-facebook mx-2" style={{ color: "white" }}></i>
-            <i className="fa fa-twitter mx-2" style={{ color: "white" }}></i>
-            <i className="fa fa-instagram mx-2" style={{ color: "white" }}></i>
-          </div>
+            <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">
+              <i className="fa fa-facebook mx-2" style={{ color: "white" }}></i>
+            </a>
+            <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">
+                  <i className="fa fa-linkedin" aria-hidden="true" style={{ color: "white" }}/>
+                </a>
+            <a href="https://www.instagram.com/diakool_airconditioners/ " target="_blank">
+            <i className="fa fa-instagram mx-2" style={{ color: "white" }}></i></a>
+            <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">
+                  <i className="fa fa-youtube" aria-hidden="true" style={{ color: "white" }}/>
+                </a>
+          </div>  
         </div>
       </div>
 
@@ -37,7 +45,7 @@ function NavBar() {
           {/* <span>DIACOOL</span> */}
           <Link className="navbar-brand d-flex align-items-center" to="/">
               <div style={{ width: '100px', height: '50px' }}>
-                <img src={Diakool} alt="Diakool Logo" style={{ width: '100%', height: '100%', objectFit: 'cover'}} />
+                <img src={Diakool} alt="Diakool Logo"  />
               </div>
             </Link>
         </a>
