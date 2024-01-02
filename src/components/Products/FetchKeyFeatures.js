@@ -9,7 +9,7 @@ async function FetchKeyFeatures(id) {
   
       if (response.status === 200) {
         const result = await response.json();
-        console.log(result,'result')
+        // console.log(result,'result')
         return result;
       } else {
         // If status is not 200, throw an error

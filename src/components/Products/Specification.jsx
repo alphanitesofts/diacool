@@ -3,10 +3,10 @@ import { useState } from 'react';
 import FetchSpecifications from './FetchSpecification';
 import FetchKeyFeatures from './FetchKeyFeatures';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
-const Specification = ({product}) => {
-    const [selected,setSelected]=useState("Keys")
-    const[specification,setSpecification] = useState('');
-    const[key_features,setKey_features] = useState('');
+const Specification = ({ product }) => {
+    const [selected, setSelected] = useState("Keys")
+    const [specification, setSpecification] = useState('');
+    const [key_features, setKey_features] = useState('');
     async function FetchSpecification() {
         try {
             const data = await FetchSpecifications(product.id);
@@ -22,7 +22,7 @@ const Specification = ({product}) => {
             const data = await FetchKeyFeatures(product.id);
             if (data !== null) {
                 setKey_features(data?.key_features);
-                console.log(data);
+                // console.log(data);
             }
         } catch (error) {
             console.error('Error:', error.message);
@@ -33,7 +33,7 @@ const Specification = ({product}) => {
         FetchSpecification();
         FetchKeyFeature();
     }, []);
-    
+
     return (
         <section className="specification-section" >
             <div className="container">
@@ -42,24 +42,24 @@ const Specification = ({product}) => {
                         <nav className="product-spec">
                             <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button
-                                onClick={()=> setSelected("Keys")}
-                                className={selected=== "Keys" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab" >Key Features</button>
-                                <button 
-                                onClick={()=> setSelected("Specifications")}
-                                className={selected=== "Specifications" ? "nav-link active":"nav-link"} data-bs-toggle="tab"  type="button" role="tab"> Specifications</button>
-                                <button 
-                               onClick={()=> setSelected("Support")}
-                               className={selected=== "Support" ? "nav-link active support":"nav-link support"}   data-bs-toggle="tab"  type="button" role="tab" >Support</button>
-                                <button 
-                                onClick={()=> setSelected("Buy")}
+                                    onClick={() => setSelected("Keys")}
+                                    className={selected === "Keys" ? "nav-link active" : "nav-link"} data-bs-toggle="tab" type="button" role="tab" >Key Features</button>
+                                <button
+                                    onClick={() => setSelected("Specifications")}
+                                    className={selected === "Specifications" ? "nav-link active" : "nav-link"} data-bs-toggle="tab" type="button" role="tab"> Specifications</button>
+                                <button
+                                    onClick={() => setSelected("Support")}
+                                    className={selected === "Support" ? "nav-link active support" : "nav-link support"} data-bs-toggle="tab" type="button" role="tab" >Support</button>
+                                <button
+                                    onClick={() => setSelected("Buy")}
 
-                                className={selected=== "Buy" ? "nav-link active support":"nav-link support"}   data-bs-toggle="tab"  type="button" role="tab" >Where to Buy</button>
+                                    className={selected === "Buy" ? "nav-link active support" : "nav-link support"} data-bs-toggle="tab" type="button" role="tab" >Where to Buy</button>
                             </div>
                         </nav>
                         <div className="tab-content" id="nav-tabContent" >
-                            <div className={ selected === "Keys"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
+                            <div className={selected === "Keys" ? "tab-pane fade active show" : "tab-pane fade"} role="tabpanel" >
                                 <div className="key-feature key-feature-100">
-                                    
+
                                     <div className="key-feature-box key-feature-box-50" id='printablediv'>
                                         <div className="key-feature-box-img">
                                             <img src={`${imageUrl}${key_features.image}`} className="img-fluid lazyload" alt="4 Way Swing" />
@@ -71,9 +71,9 @@ const Specification = ({product}) => {
                                 </div>
                             </div>
 
-                            <div  className={ selected === "Specifications"? "tab-pane fade active show":"tab-pane fade"}  role="tabpanel" >
+                            <div className={selected === "Specifications" ? "tab-pane fade active show" : "tab-pane fade"} role="tabpanel" >
                                 <div className="specification">
-                                            <div className="specification-box" >
+                                    <div className="specification-box" >
                                         <div className="specification-box-name" id='printablediv'>
                                             <h6>{specification.name}</h6>
                                         </div>
@@ -84,7 +84,7 @@ const Specification = ({product}) => {
                                 </div>
                             </div>
 
-                            <div  className={ selected === "Support"? "tab-pane fade active show support":"tab-pane fade support"}  role="tabpanel" >
+                            <div className={selected === "Support" ? "tab-pane fade active show support" : "tab-pane fade support"} role="tabpanel" >
                                 <div className="key-feature">
                                     <div className="key-feature-box">
                                         <div className="key-feature-box-img">
@@ -113,7 +113,7 @@ const Specification = ({product}) => {
                                 </div>
                             </div>
 
-                            <div  className={ selected === "Buy"? "tab-pane fade active show support":"tab-pane fade support"} role="tabpanel" >
+                            <div className={selected === "Buy" ? "tab-pane fade active show support" : "tab-pane fade support"} role="tabpanel" >
                                 <h4>KEY OUTLETS</h4>
                                 <div className="col-keyout">
                                     <div className="col-key">
@@ -139,19 +139,23 @@ const Specification = ({product}) => {
                                 <div className="online-flex">
                                     <div className="online-col">
                                         <img src="/images/whatsapp.png" className="img-fluid lazyload" alt="whatsapp" />
-                                        <a href="#" target="_blank">Buy Now</a>
+                                        <a href="https://wa.me/+971505735436?text=Hello%20there,%20I%20want%20to%20buy%20your%20product" target="_blank">Buy Now</a>
                                     </div>
                                     <div className="online-col ml-1">
-                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
+                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook" />
                                         <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
                                     </div>
                                     <div className="online-col ml-1">
-                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
-                                        <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
+                                        <img src="/images/youtube-logo.webp" className="img-fluid lazyload" alt="facebook" />
+                                        <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">Buy Now</a>
                                     </div>
                                     <div className="online-col ml-1">
-                                        <img src="/images/facebook.png" className="img-fluid lazyload" alt="facebook"/>
-                                        <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">Buy Now</a>
+                                        <img src="/images/instagram.png" className="img-fluid lazyload" alt="facebook" />
+                                        <a href="https://www.instagram.com/diakool_airconditioners/" target="_blank">Buy Now</a>
+                                    </div>
+                                    <div className="online-col ml-1">
+                                        <img src="/images/linkedIn.png" className="img-fluid lazyload" alt="facebook" />
+                                        <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">Buy Now</a>
                                     </div>
                                 </div>
                                 {/* <div className="d-none">

@@ -3,8 +3,12 @@ import './productListing.css';
 import Specification from './Specification';
 import FetchAcDetails from './FetchAcDetails';
 import { useParams } from 'react-router-dom';
-import JSZip from 'jszip';
-import { saveAs } from 'file-saver';
+import {useReactToPrint} from 'react-to-print';
+// import JSZip from 'jszip';
+// import { saveAs } from 'file-saver';
+import ProductInvoice from "./ProductInvoice";
+import FetchKeyFeatures from './FetchKeyFeatures';
+import FetchSpecifications from './FetchSpecification';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
 
 const ProductDetails = () => {
@@ -15,6 +19,10 @@ const ProductDetails = () => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
+    const [showInvoice, setShowInvoice] = useState(false);
+    const [specification, setSpecification] = useState('');
+    const [key_features, setKey_features] = useState('');
+    const componentRef = useRef();
     const openLightbox = (index) => {
         setPhotoIndex(index);
         setLightboxIsOpen(true);
@@ -30,9 +38,35 @@ const ProductDetails = () => {
             console.error('Error:', error.message);
         }
     }
+    
+    async function FetchSpecification() {
+        try {
+            const data = await FetchSpecifications(productId);
+            if (data !== null) {
+                setSpecification(data?.Specification);
+                // console.log(data?.Specification)
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+    async function FetchKeyFeature() {
+        try {
+            const data = await FetchKeyFeatures(productId);
+            if (data !== null) {
+                setKey_features(data?.key_features);
+                // console.log(data?.key_features);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
 
     useEffect(() => {
         fetchDataAndProcess();
+        FetchSpecification();
+        FetchKeyFeature();
     }, []);
 
 
@@ -78,45 +112,25 @@ const ProductDetails = () => {
     })) || [];
     const thumbnails = imges.map((img) => img.thumbnail);
     const originals = imges.map((img) => img.original);
-    const handlePrint = () => {
-        // Check if product data is available
-        if (product) {
-            window.print();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        
+    });
+    const handleDownloadImages = () => {
+        // console.log(originals[photoIndex]);
+        if (product && product.image) {
+            var element = document.createElement("a");
+            var file = new Blob(
+                [
+                    `https://supercoolacimages.alphanitesofts.net/1703778092_Group%201.png`
+                ],
+                { type: "image/*" }
+            );
+            element.href = URL.createObjectURL(file);
+            element.download = `https://supercoolacimages.alphanitesofts.net/1703778092_Group%201.png`
+            element.click();
         }
     };
-    const handleDownloadImages = () => {
-  if (product && product.image) {
-    const zip = new JSZip();
-
-    const fetchImage = (imageName, index) => {
-      const image = `${imageUrl}${imageName.replace(/\s/g, '%20')}`;
-      return fetch(image)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Failed to fetch image ${index + 1}: ${response.statusText}`);
-          }
-          return response.blob();
-        });
-    };
-
-    const imagePromises = product.image.map((imageName, index) => fetchImage(imageName, index));
-
-    Promise.all(imagePromises)
-      .then(blobs => {
-        blobs.forEach((blob, index) => {
-          zip.file(`image_${index + 1}.png`, blob);
-        });
-
-        zip.generateAsync({ type: 'blob' })
-          .then(content => {
-            saveAs(content, 'images.zip');
-          });
-      })
-      .catch(error => {
-        console.error('Image fetch error:', error.message);
-      });
-  }
-};
     return (
         <>
             {
@@ -195,14 +209,14 @@ const ProductDetails = () => {
                                                 <img src="https://www.supergeneral.com/public/images/products/btn/share-w.png" className="img-fluid btn-white lazyload" alt="share" />
                                                 share
                                             </a>
-                                            <a rel="nofollow" href='#' className="fb_share share-social" target="_blank">
-                                                <i className="fab fa-facebook" aria-hidden="true"></i>
+                                            <a rel="nofollow" href='https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO' className="fb_share share-social" target="_blank">
+                                                <i className="fa fa-facebook" aria-hidden="true"></i>
                                             </a>
-                                            <a rel="nofollow" className="mail_share share-social" href="#">
+                                            <a rel="nofollow" className="mail_share share-social" href="mailto:Diakoolairconditioners@gmail.com">
                                                 <i className="fa fa-envelope" aria-hidden="true"></i>
                                             </a>
-                                            <a rel="nofollow" href="#" className="whatsup_share share-social" target="_blank">
-                                                <i className="fab fa-whatsapp" aria-hidden="true"></i>
+                                            <a rel="nofollow" href="https://wa.me/+971505735436?text=Hello%20there,%20I%20want%20to%20buy%20your%20product" className="whatsup_share share-social" target="_blank">
+                                                <i className="fa fa-whatsapp" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div className="btn-box">
@@ -213,7 +227,7 @@ const ProductDetails = () => {
                                             </a>
                                         </div>
                                         <div className="btn-box">
-                                            <a className="download-p-img" download>
+                                            <a className="download-p-img" href={`https://supercoolacimages.alphanitesofts.net/1703778092_Group%201.png`} onClick={handleDownloadImages} >
                                                 <img src="https://www.supergeneral.com/public/images/products/btn/download.png" className="img-fluid btn-black lazyload" alt="download" />
                                                 <img src="https://www.supergeneral.com/public/images/products/btn/download-w.png" className="img-fluid btn-white lazyload" alt="download" />
                                                 Image
@@ -273,7 +287,9 @@ const ProductDetails = () => {
             {product !== "" &&
                 <Specification product={product} />
             }
-
+            <div style={{ display: "none" }}>{<ProductInvoice key_features={key_features}
+             specification={specification} product={product} ref={componentRef} />}</div>
+            
         </>
     )
 }

@@ -636,22 +636,3 @@
     width: 43%;
   }
 }
-
-@media print {
-  .header_section,
-  footer,
-  header,
-  .btn-section,
-  .products-details,
-  .key-feature-des,
-  .btn-amazon,
-  .btn-where,
-  .conditions,
-  .support,
-  .online-flex,
-  .showroom-box-row,
-  .showroom-box-row,
-  .btn {
-    display: none;
-  }
-}

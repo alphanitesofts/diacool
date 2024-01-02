@@ -53,7 +53,7 @@ const ProductListing = () => {
     try {
       const data = await fetchData();
       if (data !== null) {
-        console.log(data)
+        // console.log(data)
         setAllAcs(data.data);
         setFilteredAcs(data.data); // Set the filtered data initially to all data
       }
