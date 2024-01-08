@@ -13,17 +13,21 @@ function ChooseUs(){
       <div className="pr-md-3">
         <div className="text-center text-sm-right mb-2-9">
           <div className="mb-4">
-            <img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="..." className="rounded-circle" />
+            <img src="/images/house-cleaning.png" alt="..." className="rounded-circle" />
           </div>
           <h4 className="sub-info">Residential Cleaning</h4>
-          <p className="display-30 mb-0">Roin gravida nibh vel velit auctor aliquetenean sollicitudin, lorem qui bibendum auctor.</p>
+          <p className="display-30 mb-0">Keep your home clean and fresh with our professional
+           residential cleaning services. 
+           We ensure every nook and corner is sparkling.
+           </p>
         </div>
         <div className="text-center text-sm-right">
           <div className="mb-4">
-            <img src="https://www.bootdey.com/image/80x80/87CEFA/000000" alt="..." className="rounded-circle" />
+            <img src="/images/vacuum-cleaner.png" alt="..." className="rounded-circle" />
           </div>
           <h4 className="sub-info">Commercial Cleaning</h4>
-          <p className="display-30 mb-0">Gravida roin nibh vel velit auctor aliquetenean sollicitudin, lorem qui bibendum auctor.</p>
+          <p className="display-30 mb-0"> We provide top-notch commercial cleaning services tailored to your business needs.
+           Create a pristine work environment with us.</p>
         </div>
       </div>
     </div>
@@ -36,17 +40,19 @@ function ChooseUs(){
       <div className="pl-md-3">
         <div className="text-center text-sm-left mb-2-9">
           <div className="mb-4">
-            <img src="https://www.bootdey.com/image/80x80/8A2BE2/000000" alt="..." className="rounded-circle" />
+            <img src="/images/washing-machine.png" alt="..." className="rounded-circle" />
           </div>
           <h4 className="sub-info">Washing services</h4>
-          <p className="display-30 mb-0">Nibh roin gravida vel velit auctor aliquetenean sollicitudin, lorem qui bibendum auctor.</p>
+          <p className="display-30 mb-0">Experience the convenience of our washing services.
+           We take care of your laundry needs, providing freshness with every wash.</p>
         </div>
         <div className="text-center text-sm-left">
           <div className="mb-4">
-            <img src="https://www.bootdey.com/image/80x80/20B2AA/000000" alt="..." className="rounded-circle" />
+            <img src="/images/carpet-cleaner.png" alt="..." className="rounded-circle" />
           </div>
           <h4 className="sub-info">Carpet cleaning</h4>
-          <p className="display-30 mb-0">Vel proin gravida nibh velit auctor aliquetenean sollicitudin, lorem qui bibendum auctor.</p>
+          <p className="display-30 mb-0">Revitalize your carpets with our expert cleaning services.
+           We remove stains and allergens, leaving your carpets looking brand new..</p>
         </div>
       </div>
     </div>

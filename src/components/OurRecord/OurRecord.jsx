@@ -8,45 +8,48 @@ function OurRecord(){
     <div className="row align-items-center flex-row-reverse">
       <div className="col-lg-6">
         <div className="about-text go-to">
-          <h3 className="dark-color">Since 2014</h3>
-          <h6 className="theme-color lead">An Air Conditioner &amp; Company In UAE</h6>
-          <p>I <mark>You Only Demand</mark> we provide customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
+          <h3 className="dark-color">Diacool Air Conditioners</h3>
+          <h6 className="theme-color lead">Your Trusted Cooling Solution in the UAE Since 2014</h6>
+          <p>I <mark>At Diacool </mark> 
+          , we are committed to providing top-notch air conditioning solutions tailored to your needs.
+                Whether it's for your home or business, we ensure a cool and comfortable environment year-round.
+                Our passion is to deliver excellence in service and innovative cooling solutions.</p>
           <div className="row about-list">
-            <div className="col-md-6">
-              <div className="media">
+            <div className="col-md-8">
+              {/* <div className="media">
                 <label>Birthday</label>
                 <p>4th april 1998</p>
-              </div>
-              <div className="media">
+              </div> */}
+              {/* <div className="media">
                 <label>Age</label>
                 <p>22 Yr</p>
-              </div>
-              <div className="media">
+              </div> */}
+              {/* <div className="media">
                 <label>Residence</label>
                 <p>Canada</p>
+              </div> */}
+              <div className="media">
+                <label>Address:  {" "}</label>
+                <p>{" "}Amman Street - INDUSTRIAL AREA 2 - Ajman - United Arab Emirates</p>
               </div>
               <div className="media">
-                <label>Address</label>
-                <p>California, USA</p>
+                <label>E-mail </label>
+                <p>Diakoolairconditioners@gmail.com</p>
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="media">
-                <label>E-mail</label>
-                <p>info@domain.com</p>
-              </div>
+            <div className="col-md-4">
               <div className="media">
                 <label>Phone</label>
-                <p>820-885-3321</p>
+                <p>+971505735436</p>
               </div>
-              <div className="media">
+              {/* <div className="media">
                 <label>Skype</label>
                 <p>skype.0404</p>
-              </div>
-              <div className="media">
+              </div> */}
+              {/* <div className="media">
                 <label>Freelance</label>
                 <p>Available</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -61,25 +64,25 @@ function OurRecord(){
       <div className="row">
         <div className="col-6 col-lg-3">
           <div className="count-data text-center">
-            <h6 className="count h2" data-to={500} data-speed={500}>500</h6>
+            <h6 className="count h2" style={{color:"white"}} data-to={500} data-speed={500}>500</h6>
             <p className="m-0px font-w-600" style={{color:"white"}}>Happy Clients</p>
           </div>
         </div>
         <div className="col-6 col-lg-3">
           <div className="count-data text-center">
-            <h6 className="count h2" data-to={150} data-speed={150}>150</h6>
+            <h6 className="count h2" style={{color:"white"}} data-to={150} data-speed={150}>150</h6>
             <p className="m-0px font-w-600" style={{color:"white"}}>A.C Installed</p>
           </div>
         </div>
         <div className="col-6 col-lg-3">
           <div className="count-data text-center">
-            <h6 className="count h2" data-to={850} data-speed={850}>850</h6>
+            <h6 className="count h2" style={{color:"white"}} data-to={850} data-speed={850}>850</h6>
             <p className="m-0px font-w-600" style={{color:"white"}}>Locations</p>
           </div>
         </div>
         <div className="col-6 col-lg-3">
           <div className="count-data text-center">
-            <h6 className="count h2" data-to={190} data-speed={190}>190</h6>
+            <h6 className="count h2" style={{color:"white"}} data-to={190} data-speed={190}>190</h6>
             <p className="m-0px font-w-600" style={{color:"white"}}>Telephonic Talk</p>
           </div>
         </div>

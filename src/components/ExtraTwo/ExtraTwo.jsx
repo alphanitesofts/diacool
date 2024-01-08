@@ -11,16 +11,16 @@ function ExtraTwo(){
         <div className="blockabout">
           <div className="blockabout-inner text-center text-sm-start">
             <div className="title-big pb-3 mb-3">
-              <h3>Why Should You Choose Us</h3>
+              <h3>Our Commitment to Excellence</h3>
             </div>
             <p className="description-p text-muted pe-0 pe-lg-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
+            At Diacool, we are committed to delivering excellence in every service we provide. Our dedicated team ensures top-notch quality, reliability, and customer satisfaction.
             </p>
-            <p className="description-p text-muted pe-0 pe-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere.</p>
+            <p className="description-p text-muted pe-0 pe-lg-0">With years of experience, we have built a reputation for reliability, quality, and customer-focused solutions.</p>
             <div className="sosmed-horizontal pt-3 pb-3">
-              <a href="#"><i className="fa fa-facebook" /></a>
-              <a href="#"><i className="fa fa-instagram" /></a>
-              <a href="#"><i className="fa fa-pinterest" /></a>
+              <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO"><i className="fa fa-facebook" /></a>
+              <a href="https://www.instagram.com/diakool_airconditioners/"><i className="fa fa-instagram" /></a>
+              <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA"><i className="fa fa-youtube" /></a>
             </div>
             <a href="#" className="btn rey-btn mt-3">See More</a>
           </div>

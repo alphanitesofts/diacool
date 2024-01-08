@@ -3,7 +3,7 @@ import './productListing.css';
 import Specification from './Specification';
 import FetchAcDetails from './FetchAcDetails';
 import { useParams } from 'react-router-dom';
-import {useReactToPrint} from 'react-to-print';
+import { useReactToPrint } from 'react-to-print';
 // import JSZip from 'jszip';
 // import { saveAs } from 'file-saver';
 import ProductInvoice from "./ProductInvoice";
@@ -32,41 +32,44 @@ const ProductDetails = () => {
             const data = await FetchAcDetails(productId);
             if (data !== null) {
                 setProduct(data?.data);
-                // console.log(data)
-            }
-        } catch (error) {
-            console.error('Error:', error.message);
-        }
-    }
-    
-    async function FetchSpecification() {
-        try {
-            const data = await FetchSpecifications(productId);
-            if (data !== null) {
-                setSpecification(data?.Specification);
-                // console.log(data?.Specification)
-            }
-        } catch (error) {
-            console.error('Error:', error.message);
-        }
-    }
-    async function FetchKeyFeature() {
-        try {
-            const data = await FetchKeyFeatures(productId);
-            if (data !== null) {
+                setSpecification(data?.specifications);
                 setKey_features(data?.key_features);
-                // console.log(data?.key_features);
+                console.log(data?.specifications)
+                console.log(data?.key_features)
             }
         } catch (error) {
             console.error('Error:', error.message);
         }
     }
+
+    // async function FetchSpecification() {
+    //     try {
+    //         const data = await FetchSpecifications(productId);
+    //         if (data !== null) {
+    //             setSpecification(data?.Specification);
+    //             // console.log(data?.Specification)
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error.message);
+    //     }
+    // }
+    // async function FetchKeyFeature() {
+    //     try {
+    //         const data = await FetchKeyFeatures(productId);
+    //         if (data !== null) {
+    //             setKey_features(data?.key_features);
+    //             // console.log(data?.key_features);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error.message);
+    //     }
+    // }
 
 
     useEffect(() => {
         fetchDataAndProcess();
-        FetchSpecification();
-        FetchKeyFeature();
+        // FetchSpecification();
+        // FetchKeyFeature();
     }, []);
 
 
@@ -114,7 +117,7 @@ const ProductDetails = () => {
     const originals = imges.map((img) => img.original);
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
-        
+
     });
     const handleDownloadImages = () => {
         // console.log(originals[photoIndex]);
@@ -255,7 +258,7 @@ const ProductDetails = () => {
                                         <div className="key-feature-des">
                                             <h3>Key Features</h3>
                                             <ul>
-                                                {product?.key_features?.map((item, index) => (
+                                                {key_features?.map((item, index) => (
                                                     <li>{item.name}</li>
                                                 ))}
                                             </ul>
@@ -285,11 +288,11 @@ const ProductDetails = () => {
             }
 
             {product !== "" &&
-                <Specification product={product} />
+                <Specification specification={specification} key_features={key_features} />
             }
             <div style={{ display: "none" }}>{<ProductInvoice key_features={key_features}
-             specification={specification} product={product} ref={componentRef} />}</div>
-            
+                specification={specification} product={product} ref={componentRef} />}</div>
+
         </>
     )
 }

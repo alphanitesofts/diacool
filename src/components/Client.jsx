@@ -21,11 +21,11 @@ function Client(){
                       <div className="detail-box">
                         <div className="name">
                           <h6>
-                            Alan Emerson
+                          Sarah Thompson
                           </h6>
                         </div>
                         <p>
-                          Enim consequatur odio assumenda voluptas voluptatibus esse nobis officia. Magnam, aspernatur nostrum explicabo, distinctio laudantium delectus deserunt quia quidem magni corporis earum inventore totam consectetur corrupti! Corrupti, nihil sunt? Natus.
+                        Diakool Air Conditioners provided exceptional service. Their team is highly professional, and the quality of their work exceeded my expectations. I highly recommend their services.
                         </p>
                         <i className="fa fa-quote-left" aria-hidden="true" />
                       </div>
@@ -43,11 +43,11 @@ function Client(){
                       <div className="detail-box">
                         <div className="name">
                           <h6>
-                            Alan Emerson
+                          John Davis
                           </h6>
                         </div>
                         <p>
-                          Enim consequatur odio assumenda voluptas voluptatibus esse nobis officia. Magnam, aspernatur nostrum explicabo, distinctio laudantium delectus deserunt quia quidem magni corporis earum inventore totam consectetur corrupti! Corrupti, nihil sunt? Natus.
+                        The team at Diakool is fantastic! They were prompt, efficient, and solved our air conditioning issues with expertise. I'm impressed with their commitment to customer satisfaction.
                         </p>
                         <i className="fa fa-quote-left" aria-hidden="true" />
                       </div>
@@ -65,11 +65,11 @@ function Client(){
                       <div className="detail-box">
                         <div className="name">
                           <h6>
-                            Alan Emerson
+                          Emily Carter
                           </h6>
                         </div>
                         <p>
-                          Enim consequatur odio assumenda voluptas voluptatibus esse nobis officia. Magnam, aspernatur nostrum explicabo, distinctio laudantium delectus deserunt quia quidem magni corporis earum inventore totam consectetur corrupti! Corrupti, nihil sunt? Natus.
+                        Diakool's technicians are knowledgeable and courteous. They not only fixed our AC but also provided valuable tips for maintenance. Great service overall!
                         </p>
                         <i className="fa fa-quote-left" aria-hidden="true" />
                       </div>

@@ -3,36 +3,38 @@ import { useState } from 'react';
 import FetchSpecifications from './FetchSpecification';
 import FetchKeyFeatures from './FetchKeyFeatures';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
-const Specification = ({ product }) => {
+const Specification = ({ specification, key_features }) => {
     const [selected, setSelected] = useState("Keys")
-    const [specification, setSpecification] = useState('');
-    const [key_features, setKey_features] = useState('');
-    async function FetchSpecification() {
-        try {
-            const data = await FetchSpecifications(product.id);
-            if (data !== null) {
-                setSpecification(data?.Specification);
-            }
-        } catch (error) {
-            console.error('Error:', error.message);
-        }
-    }
-    async function FetchKeyFeature() {
-        try {
-            const data = await FetchKeyFeatures(product.id);
-            if (data !== null) {
-                setKey_features(data?.key_features);
-                // console.log(data);
-            }
-        } catch (error) {
-            console.error('Error:', error.message);
-        }
-    }
+    // console.log(specification, "spec")
+    // console.log(key_features, 'key')
+    // const [specification, setSpecification] = useState('');
+    // const [key_features, setKey_features] = useState('');
+    // async function FetchSpecification() {
+    //     try {
+    //         const data = await FetchSpecifications(product.id);
+    //         if (data !== null) {
+    //             setSpecification(data?.Specification);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error.message);
+    //     }
+    // }
+    // async function FetchKeyFeature() {
+    //     try {
+    //         const data = await FetchKeyFeatures(product.id);
+    //         if (data !== null) {
+    //             setKey_features(data?.key_features);
+    //             // console.log(data);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error.message);
+    //     }
+    // }
 
-    useEffect(() => {
-        FetchSpecification();
-        FetchKeyFeature();
-    }, []);
+    // useEffect(() => {
+    //     FetchSpecification();
+    //     FetchKeyFeature();
+    // }, []);
 
     return (
         <section className="specification-section" >
@@ -46,7 +48,8 @@ const Specification = ({ product }) => {
                                     className={selected === "Keys" ? "nav-link active" : "nav-link"} data-bs-toggle="tab" type="button" role="tab" >Key Features</button>
                                 <button
                                     onClick={() => setSelected("Specifications")}
-                                    className={selected === "Specifications" ? "nav-link active" : "nav-link"} data-bs-toggle="tab" type="button" role="tab"> Specifications</button>
+                                    className={selected === "Specifications" ? "nav-link active" : "nav-link"} data-bs-toggle="tab" type="button" role="tab">
+                                        {console.log("Rendering Specifications tab content")} Specifications</button>
                                 <button
                                     onClick={() => setSelected("Support")}
                                     className={selected === "Support" ? "nav-link active support" : "nav-link support"} data-bs-toggle="tab" type="button" role="tab" >Support</button>
@@ -59,28 +62,33 @@ const Specification = ({ product }) => {
                         <div className="tab-content" id="nav-tabContent" >
                             <div className={selected === "Keys" ? "tab-pane fade active show" : "tab-pane fade"} role="tabpanel" >
                                 <div className="key-feature key-feature-100">
-
-                                    <div className="key-feature-box key-feature-box-50" id='printablediv'>
-                                        <div className="key-feature-box-img">
-                                            <img src={`${imageUrl}${key_features.image}`} className="img-fluid lazyload" alt="4 Way Swing" />
-                                        </div>
-                                        <div className="key-feature-box-content">
-                                            <h5>{key_features.name}</h5>
-                                        </div>
-                                    </div>
+                                    {key_features &&
+                                        key_features.map((item, index) => (
+                                            <div className="key-feature-box key-feature-box-50" id='printablediv' key={index}>
+                                                <div className="key-feature-box-img">
+                                                    <img src={`${imageUrl}${item.image}`} className="img-fluid lazyload" alt="4 Way Swing" />
+                                                </div>
+                                                <div className="key-feature-box-content">
+                                                    <h5>{item.name}</h5>
+                                                </div>
+                                            </div>
+                                        ))}
                                 </div>
                             </div>
 
                             <div className={selected === "Specifications" ? "tab-pane fade active show" : "tab-pane fade"} role="tabpanel" >
                                 <div className="specification">
-                                    <div className="specification-box" >
-                                        <div className="specification-box-name" id='printablediv'>
-                                            <h6>{specification.name}</h6>
-                                        </div>
-                                        <div className="specification-box-units">
-                                            <h6>{specification.value}</h6>
-                                        </div>
-                                    </div>
+                                    {specification &&
+                                        specification.map((item, index) => (
+                                            <div className="specification-box" key={index}>
+                                                <div className="specification-box-name" id="printablediv">
+                                                    <h6>{item.name}</h6>
+                                                </div>
+                                                <div className="specification-box-units">
+                                                    <h6>{item.value}</h6>
+                                                </div>
+                                            </div>
+                                        ))}
                                 </div>
                             </div>
 

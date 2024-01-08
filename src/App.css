@@ -101,10 +101,7 @@ ul.i-list.medium .icon {
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
   position: relative;
   z-index: 1;
-  /*background-image: url(../img/crease.svg) !important;
-   -moz-background-size: 100% 100% !important;
-   background-size: 100% 100% !important;
-   background-position: center center !important;*/
+
 }
 
 ul.i-list.medium .icon i.fa {
@@ -256,7 +253,7 @@ separator,
   margin-right: auto;
 }
 
-/* BLOGS BLOGS BLOGS BLOGS BLOGS CSS
+/* BLOGS BLOGS BLOGS BLOGS BLOGS CSS */
     /* ============ >  BLOGS CSS DOWN HERE  < ================= */
 
 body {

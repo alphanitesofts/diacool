@@ -8,7 +8,7 @@ const ProductInvoice = forwardRef((props, ref) => {
 
   useEffect(() => {
     // Your logic to generate the URL dynamically
-    
+
     const dynamicUrl = window.location.href
     setGeneratedUrl(dynamicUrl);
   }, []);
@@ -40,57 +40,56 @@ const ProductInvoice = forwardRef((props, ref) => {
                 </div>
                 <div class="col-lg-12">
                   <div class="invoice-details">
-                    {/* <img src={`${imageUrl}${product.image[0]}`}/> */}
+                    <img src={`${imageUrl}${product?.image?.[0]}`} style={{width:"400px"}}/>
                     <h3>{product.name}</h3>
                   </div>
                 </div>
-                <div className="col-lg-12 table">
-                  <div className="col-lg-6">
+                <div className="col-lg-12 tabl">
+                  <div className="col-lg-6 key">
                     <div>
                       <h2><strong>Key Features</strong>
                       </h2>
                     </div>
-                    <table>
-                      <tr>
-                        <th className="first">
-                          <img
-                            src={`${imageUrl}${key_features.image}`}
-                            className="img-fluid lazyload"
-                            alt={`${key_features.name}`}
-                          />
-                          <h5>{key_features.name}</h5>
-                        </th>
-                        <th>
-                          <img
-                            src={`${imageUrl}${key_features.image}`}
-                            className="img-fluid lazyload"
-                            alt={`${key_features.name}`}
-                          />
-                          <h5>{key_features.name}</h5>
-                        </th>
-                      </tr>
-                    </table>
+                    <div className="key-feature">
+                      {key_features &&
+                        key_features.map((item, index) => (
+                          <div className="key-feature-box" id='printablediv' key={index}>
+                            <div className="key-feature-box-img">
+                              <img src={`${imageUrl}${item.image}`} 
+                              className="img-fluid lazyload" alt={item.name} />
+                            </div>
+                            <div className="key-feature-box-content">
+                              <p>{item.name}</p>
+                            </div>
+                          </div>
+                        ))}
+                    </div>
                   </div>
-                  <div className="col-lg-6 ">
+                  <div className="col-lg-6 key">
                     <div>
                       <h2>
                         <strong> Specifications</strong>
                       </h2>
                     </div>
-                    <table>
-                      <tr>
-                        <th> <h5 className="speci">{specification.name}</h5>
-                        <h5>{specification.value}</h5>
-                        </th>
-                      </tr>
+                    <table className="tabel">
+                      {specification &&
+                        specification.map((item, index) => (
+                          <tr key={index}>
+                            <th className="speci"> <h5 >{item.name}</h5>
+                              <h5>{item.value}</h5>
+                            </th>
+                          </tr>
+                        ))
+                      }
+
                     </table>
                   </div>
                 </div>
-                <div class="invoice-footer ">
+                <footer class="invoice-footer ">
                   <p class="text-center">
                     {generatedUrl}
                   </p>
-                </div>
+                </footer>
               </div>
             </div>
           </div>

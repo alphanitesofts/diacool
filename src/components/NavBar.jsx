@@ -23,16 +23,16 @@ function NavBar() {
           {/* Social Icons */}
           <div className="col-12 text-right ">
             {/* Add your social icons here */}
-            <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">
-              <i className="fa fa-facebook mx-2" style={{ color: "white" }}></i>
+            <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank" >
+              <i className="fa fa-facebook mx-2" style={{ color: "white", fontSize: "22px" }}></i>
             </a>
             <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">
-                  <i className="fa fa-linkedin" aria-hidden="true" style={{ color: "white" }}/>
+                  <i className="fa fa-linkedin" aria-hidden="true" style={{ color: "white", fontSize: "22px" }}/>
                 </a>
             <a href="https://www.instagram.com/diakool_airconditioners/ " target="_blank">
-            <i className="fa fa-instagram mx-2" style={{ color: "white" }}></i></a>
+            <i className="fa fa-instagram mx-2" style={{ color: "white", fontSize: "22px"  }}></i></a>
             <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">
-                  <i className="fa fa-youtube" aria-hidden="true" style={{ color: "white" }}/>
+                  <i className="fa fa-youtube" aria-hidden="true" style={{ color: "white", fontSize: "22px"  }}/>
                 </a>
           </div>  
         </div>
@@ -44,8 +44,8 @@ function NavBar() {
         <a className="navbar-brand" href="/">
           {/* <span>DIACOOL</span> */}
           <Link className="navbar-brand d-flex align-items-center" to="/">
-              <div style={{ width: '100px', height: '50px' }}>
-                <img src={Diakool} alt="Diakool Logo"  />
+              <div style={{ width: '120px', height: '60px' }}>
+                <img src={Diakool} style={{objectFit:"cover"}} alt="Diakool Logo"  />
               </div>
             </Link>
         </a>
