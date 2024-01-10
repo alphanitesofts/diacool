@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function About(){
     return(
@@ -23,9 +24,9 @@ function About(){
                   are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
                   the middle of text. All
                 </p>
-                <a href>
+                <Link to={`/contact`} style={{textDecoration:"none"}}>
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

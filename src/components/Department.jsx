@@ -10,21 +10,21 @@ function Department(){
                 Hot Categories
               </h2>
               <p>
-                Asperiores sunt consectetur impedit nulla molestiae delectus repellat laborum dolores doloremque accusantium
+              Explore our latest and popular air conditioning categories, offering superior comfort and performance.
               </p>
             </div>
             <div className="row">
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s1.png" alt />
+                    <img src="images/airconditioner.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
                       Split A.C
                     </h5>
                     <p>
-                      fact that a reader will be distracted by the readable page when looking at its layout.
+                    Choose our Split Air Conditioners for efficient cooling and energy savings. Perfect for individual rooms.
                     </p>
                   </div>
                 </div>
@@ -32,14 +32,14 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s2.png" alt />
+                    <img src="images/windowac.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
                       Window A.C
                     </h5>
                     <p>
-                      fact that a reader will be distracted by the readable page when looking at its layout.
+                    Discover the convenience of our Window Air Conditioners. Easy to install and ideal for smaller spaces.
                     </p>
                   </div>
                 </div>
@@ -47,14 +47,14 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s3.png" alt />
+                    <img src="images/portableac.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
                       Portable A.C
                     </h5>
                     <p>
-                      fact that a reader will be distracted by the readable page when looking at its layout.
+                    Enjoy portability with our Portable Air Conditioners. Move them wherever you need a cool breeze.
                     </p>
                   </div>
                 </div>
@@ -62,14 +62,14 @@ function Department(){
               <div className="col-md-3">
                 <div className="box ">
                   <div className="img-box">
-                    <img src="images/s4.png" alt />
+                    <img src="images/aircurtain.png" alt />
                   </div>
                   <div className="detail-box">
                     <h5>
-                      Air Curtain
+                      Duct A.C
                     </h5>
                     <p>
-                      fact that a reader will be distracted by the readable page when looking at its layout.
+                    Opt for Ducted Air Conditioners for a centralized cooling solution. Perfect for larger spaces and offices.
                     </p>
                   </div>
                 </div>

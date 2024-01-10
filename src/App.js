@@ -15,7 +15,9 @@ import BlogDetails from './components/BlogDetails';
 import ServiceDetails from './components/ServiceDetails';
 import ProductListing from './components/Products/ProductListing';
 import ProductDetails from './components/Products/ProductDetails';
+import SearchProduct from './components/Products/SearchProduct';
 
+//new one
 
 const App = () => {
   return (
@@ -32,9 +34,10 @@ const App = () => {
         <Route path="/blogs" element={<Blogs/>} />     
         <Route path="/servicedetails" element={<ServiceDetails/>} />     
 
-        <Route path="/blogsdetails" element={<BlogDetails/>} />
+        <Route path="/blogsdetails/:id" element={<BlogDetails/>} />
         <Route path="/productlisting" element={<ProductListing/>} />
         <Route path="/productdetails/:productId" element={<ProductDetails/>} />
+        <Route path="/searchProduct/:query" element={<SearchProduct/>} />
 
 
 

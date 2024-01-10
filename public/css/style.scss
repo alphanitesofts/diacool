@@ -1,7 +1,7 @@
 $white: #ffffff;
 $black: #000000;
-$primary1: #62d2a2;
-$primary2: #1fab89;
+$primary1: rgba(28, 63, 148);
+$primary2: rgba(28, 63, 148);
 $textCol: #1f1f1f;
 
 // import fonts - font-family: 'Nunito', sans-serif;
@@ -118,17 +118,17 @@ a:focus {
   display: flex;
   flex-direction: column;
 
-  .hero_bg_box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    z-index: -1;
+  // .hero_bg_box {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: flex-end;
+  //   overflow: hidden;
+  //   z-index: -1;
 
     img {
       width: 100%;
@@ -136,7 +136,6 @@ a:focus {
       object-fit: cover;
       object-position: bottom right;
     }
-  }
 }
 
 .sub_page {
@@ -375,8 +374,6 @@ a:focus {
         text-transform: uppercase;
       }
 
-      p {}
-
       a {
         color: $primary2;
         font-weight: 600;
@@ -485,7 +482,7 @@ a:focus {
           margin: 0 10px;
 
           &:hover {
-            color: $primary2;
+            color: $primary1;
           }
         }
       }
@@ -674,14 +671,14 @@ a:focus {
 
       a {
         margin: 5px 0;
-        color: $white;
+        color: #fefefe;
 
         i {
           margin-right: 5px;
         }
 
         &:hover {
-          color: $primary1;
+          color: #ffffff;
         }
       }
     }
@@ -702,7 +699,7 @@ a:focus {
       font-size: 24px;
 
       &:hover {
-        color: $primary1;
+        color: #ffffff;
       }
     }
   }
@@ -719,7 +716,7 @@ a:focus {
       color: $white;
 
       &:hover {
-        color: $primary1;
+        color: #fff;
       }
     }
   }

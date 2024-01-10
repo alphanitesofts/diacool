@@ -6,64 +6,77 @@ import fetchData from './AdvanceSearchSlice';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
 
 const ProductListing = () => {
-  const acCategories = ['Window AC', 'Portable AC', 'Floor Standing AC', 'Cassette AC', 'Light Commercial AC - Duct Type', 'Air Curtain'];
-  const CapacityBTU = ['9000-12000 BTUs', '12000-18000 BTUs', '18000-24000 BTUs', '24000-30000 BTUs', '30000-36000 BTUs', '36000-48000 BTUs', '48000-60000 BTUs', '70000 BTUs & above'];
-  const compressorType = ['Reciprocating', 'Scroll', 'Rotary', 'Inverter'];
+    const acCategories = ['Window AC', 'Portable AC', 'Floor Standing AC', 'Cassette AC', 'Light Commercial AC - Duct Type', 'Air Curtain', 'Split AC'];
+    const CapacityBTU = ['9000-12000 BTUs', '12000-18000 BTUs', '18000-24000 BTUs', '24000-30000 BTUs', '30000-36000 BTUs', '36000-48000 BTUs', '48000-60000 BTUs', '70000 BTUs & above'];
+    const compressorType = ['Reciprocating', 'Scroll', 'Rotary', 'Inverter'];
 
-  const [selectedACType, setSelectedACType] = useState([]);
-  const [selectedCapacityBTU, setSelectedCapacityBTU] = useState([]);
-  const [selectedCompressorType, setSelectedCompressorType] = useState([]);
-  const [visibleProducts, setVisibleProducts] = useState(100);
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
-  const [allAcs, setAllAcs] = useState([]);
-  const [filteredAcs, setFilteredAcs] = useState([]);
+    const [selectedACType, setSelectedACType] = useState([]);
+    const [selectedCapacityBTU, setSelectedCapacityBTU] = useState([]);
+    const [selectedCompressorType, setSelectedCompressorType] = useState([]);
+    const [visibleProducts, setVisibleProducts] = useState(100);
+    const [isFilterVisible, setIsFilterVisible] = useState(true);
+    const [allAcs, setAllAcs] = useState([]);
+    const [filteredAcs, setFilteredAcs] = useState([]);
 
-  const toggleFilter = () => {
-    setIsFilterVisible(!isFilterVisible);
-  };
+    const toggleFilter = () => {
+        setIsFilterVisible(!isFilterVisible);
+    };
 
-  const handleACTypeChange = (value) => {
-    setSelectedACType(value);
-    filterData(value, selectedCapacityBTU, selectedCompressorType);
-  };
+    const handleACTypeChange = (value) => {
+        setSelectedACType(value);
+        filterData(value, selectedCapacityBTU, selectedCompressorType);
+    };
 
-  const handleCapacityBTUChange = (value) => {
-    setSelectedCapacityBTU(value);
-    filterData(selectedACType, value, selectedCompressorType);
-  };
+    const handleCapacityBTUChange = (value) => {
+        setSelectedCapacityBTU(value);
+        filterData(selectedACType, value, selectedCompressorType);
+    };
 
-  const handleCompressorTypeChange = (value) => {
-    setSelectedCompressorType(value);
-    filterData(selectedACType, selectedCapacityBTU, value);
-  };
+    const handleCompressorTypeChange = (value) => {
+        setSelectedCompressorType(value);
+        filterData(selectedACType, selectedCapacityBTU, value);
+    };
 
-  const filterData = (acType, capacity, compressor) => {
-    const filteredData = allAcs.filter((item) => {
-      return (
-        (acType.length === 0 || acType.includes(item.type)) &&
-        (capacity.length === 0 || capacity.includes(item.capacity)) &&
-        (compressor.length === 0 || compressor.includes(item.compressor))
-      );
+    const filterData = (acType, capacity, compressor) => {
+        const filteredData = allAcs.filter((item) => {
+            return (
+                (acType.length === 0 || acType.includes(item.type)) &&
+                (capacity.length === 0 || capacity.includes(item.capacity)) &&
+                (compressor.length === 0 || compressor.includes(item.compressor))
+            );
+        });
+
+        setFilteredAcs(filteredData);
+    };
+
+    async function fetchDataAndProcess() {
+        try {
+            const data = await fetchData();
+            if (data !== null) {
+                // console.log(data)
+                setAllAcs(data.data);
+                setFilteredAcs(data.data); // Set the filtered data initially to all data
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+    const splitACs = [];
+    const otherACs = [];
+
+    filteredAcs.forEach((item) => {
+        if (item.type === 'Split AC') {
+            splitACs.push(item);
+        } else {
+            otherACs.push(item);
+        }
     });
 
-    setFilteredAcs(filteredData);
-  };
+    const combinedProducts = [...splitACs, ...otherACs];
 
-  async function fetchDataAndProcess() {
-    try {
-      const data = await fetchData();
-      if (data !== null) {
-        setAllAcs(data.data);
-        setFilteredAcs(data.data); // Set the filtered data initially to all data
-      }
-    } catch (error) {
-      console.error('Error:', error.message);
-    }
-  }
-
-  useEffect(() => {
-    fetchDataAndProcess();
-  }, []);
+    useEffect(() => {
+        fetchDataAndProcess();
+    }, []);
 
 
 
@@ -137,11 +150,11 @@ const ProductListing = () => {
                         </div>
                     </div>
                     <div className="col-lg-10 col-md-8 col-12 mx-auto">
-        <div className="product-category-data">
-          <div className="product-category-sec">
-            {filteredAcs ? (
-              filteredAcs.slice(0, visibleProducts).map((item, index) => (
-                <div className="product-box" key={index}>
+                        <div className="product-category-data">
+                            <div className="product-category-sec">
+                                {combinedProducts ? (
+                                    combinedProducts.slice(0, visibleProducts).map((item, index) => (
+                                        <div className="product-box" key={index}>
                                             <div className="product-box-top">
                                                 <div className="products-links">
                                                     <div className="products-link-one">

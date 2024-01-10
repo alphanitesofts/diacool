@@ -5,10 +5,11 @@ async function FetchAcDetails(id) {
     };
   
     try {
-      const response = await fetch(`https://supercoolac.alphanitesofts.net/api/fetch_product_by_id/${id}`, requestOptions);
+      const response = await fetch(`https://supercoolac.alphanitesofts.net/api/fetch_product_with_key_features_and_spec_by_id/${id}`, requestOptions);
   
       if (response.status === 200) {
         const result = await response.json();
+        // console.log(result,"result")
         return result;
       } else {
         // If status is not 200, throw an error
