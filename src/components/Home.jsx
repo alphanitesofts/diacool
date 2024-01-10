@@ -79,16 +79,16 @@ function Home() {
 
       <Department />
       <About />
-      <Services />
       <OurRecord />
       <ChooseUs />
       <ExtraOne />
       <ExtraTwo />
+      <Services />
+      <Client />
       <Doctors />
-
       {/* <Blogs/> */}
       <Contact />
-      <Client />
+      
     </div>
 
   )

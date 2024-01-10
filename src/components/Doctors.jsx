@@ -16,7 +16,7 @@ function Doctors() {
         <div className="col-sm-6 col-lg-4 mx-auto">
           <div className="box">
             <div className="img-box">
-              <img src="images/male-technician.avif" alt />
+              <img src="/images/male-technician.avif" alt />
             </div>
             <div className="detail-box">
               <div className="social_box">
@@ -45,7 +45,7 @@ function Doctors() {
         <div className="col-sm-6 col-lg-4 mx-auto">
           <div className="box">
             <div className="img-box">
-              <img src="images/360.jpg" alt />
+              <img src="/images/360.jpg" alt />
             </div>
             <div className="detail-box">
               <div className="social_box">
@@ -74,7 +74,7 @@ function Doctors() {
         <div className="col-sm-6 col-lg-4 mx-auto">
           <div className="box">
             <div className="img-box">
-              <img src="images/hvac-technician.avif" alt />
+              <img src="/images/hvac-technician.avif" alt />
             </div>
             <div className="detail-box">
               <div className="social_box">
