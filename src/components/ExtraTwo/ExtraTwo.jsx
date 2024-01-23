@@ -14,9 +14,9 @@ function ExtraTwo(){
               <h3>Our Commitment to Excellence</h3>
             </div>
             <p className="description-p text-muted pe-0 pe-lg-0">
-            At Diacool, we are committed to delivering excellence in every service we provide. Our dedicated team ensures top-notch quality, reliability, and customer satisfaction.
+            Enjoy cool, comfortable air even on the warmest days. 
             </p>
-            <p className="description-p text-muted pe-0 pe-lg-0">With years of experience, we have built a reputation for reliability, quality, and customer-focused solutions.</p>
+            <p className="description-p text-muted pe-0 pe-lg-0">Any Diakool air conditioner you bring home, from the ducted to wall mounted variety, is manufactured to a higher efficiency standard to provide you with excellent air that you can rely on.</p>
             <div className="sosmed-horizontal pt-3 pb-3">
               <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO"><i className="fa fa-facebook" /></a>
               <a href="https://www.instagram.com/diakool_airconditioners/"><i className="fa fa-instagram" /></a>
@@ -28,7 +28,7 @@ function ExtraTwo(){
       </div>
       <div className="col-lg-6 mt-5 mt-lg-0">
         <figure className="potoaboutwrap">
-          <img src={GirlSpeaking} style={{width: '400px', height: '700px'}} alt="potoabout" />
+          <img src='/images/smiling-businesswoman.webp' style={{width: '400px', height: '700px'}} alt="potoabout" />
         </figure>
       </div>
     </div>

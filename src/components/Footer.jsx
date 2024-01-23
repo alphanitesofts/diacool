@@ -53,7 +53,7 @@ function Footer() {
                 About
               </h4>
               <p>
-                Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+              In Diakool our prime objective is to provide you quality product in affordable prices along with advance technology.
               </p>
             </div>
           </div>

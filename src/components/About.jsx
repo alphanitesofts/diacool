@@ -1,39 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function About(){
-    return(
-        <section className="about_section layout_margin-bottom mt-5" >
-        <div className="container  ">
-          <div className="row">
-            <div className="col-md-6 ">
-              <div className="img-box">
-                <img src="images/1.WEBP" alt />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="detail-box">
-                <div className="heading_container">
-                  <h2>
-                    About <span>Us</span>
-                  </h2>
-                </div>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                  in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                  are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                  the middle of text. All
-                </p>
-                <Link to={`/contact`} style={{textDecoration:"none"}}>
-                  Contact Us
-                </Link>
-              </div>
+function About() {
+  return (
+    <section className="about_section layout_margin-bottom mt-5" >
+      <div className="container  ">
+        <div className="row">
+          <div className="col-md-6 ">
+            <div className="img-box">
+              <img src="images/1.WEBP" alt />
             </div>
           </div>
-
-          
+          <div className="col-md-6">
+            <div className="detail-box">
+              <div className="heading_container">
+                <h2>
+                  About <span>Us</span>
+                </h2>
+              </div>
+              <p>
+                In Diakool our prime objective is to provide you quality product in affordable prices along with advance technology.
+                Diakool air conditioner are designed according to Gulf extreme weather conditions which provides you comfortable levelheaded air in scorching heat and humidity even on the hottest days.
+                Diakool product range started with Wall mount, ducted, window and floor standing which are manufactured in high standard of quality and providing you best warranty covers in market.
+                The Wi-Fi feature in air conditioners (ACs) can really differentiate the product than conventional (ACs) models that helps you to make your place cool before entering inside. Furthermore you can even save on electricity bills by creating customized power schedules for your AC.
+              </p>
+              <Link to={`/contact`} style={{ textDecoration: "none" }}>
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
-      </section>
-    )
+
+
+      </div>
+    </section>
+  )
 }
 export default About
