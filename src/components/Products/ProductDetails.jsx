@@ -9,6 +9,7 @@ import { useReactToPrint } from 'react-to-print';
 import ProductInvoice from "./ProductInvoice";
 import FetchKeyFeatures from './FetchKeyFeatures';
 import FetchSpecifications from './FetchSpecification';
+import ImageSection from '../ImageSections/ImageSection';
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
 
 const ProductDetails = () => {
@@ -292,7 +293,7 @@ const ProductDetails = () => {
             }
             <div style={{ display: "none" }}>{<ProductInvoice key_features={key_features}
                 specification={specification} product={product} ref={componentRef} />}</div>
-
+<ImageSection/>
         </>
     )
 }
