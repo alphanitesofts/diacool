@@ -4,16 +4,13 @@ import Banner2 from '../../Image/banner2.jpg'
 
 const ImageSection = () => {
   return (
-    <div className="container-fluid m-0 p-0">
-    <div className="row">
-      <div className="col-md-12 mb-4">
-        <div  style={{height:'100vh'}}>
-          <img 
-          src={Banner}
+    <div className="container-fluid ">
+    <div className="row ">
+      <div className="col-md-12 mb-4 m-0 p-0">
+        <div>
+          <img src='/images/Web 1920 – 2.png'
           alt="First Image"
-          style={{height:'100%'}}
-            className="img-fluid"
-          />
+            className="img-fluid" />
           {/* <div className="card-body">
             <p className="card-text">
               Your first paragraph here. Lorem ipsum dolor sit amet,
@@ -24,14 +21,12 @@ const ImageSection = () => {
           </div> */}
         </div>
       </div>
-      <div className="col-md-12 mb-4">
-        <div style={{height:'100vh'}}>
+      <div className="col-md-12 mb-4 m-0 p-0">
+        <div>
           <img
-          src={Banner2}
+          src='/images/Web 1920 – 1.png'
           alt="Second Image"
-          style={{height:'100%'}}
-            className="img-fluid"
-          />
+            className="img-fluid" />
           {/* <div className="card-body">
             <p className="card-text">
               Your second paragraph here. Lorem ipsum dolor sit amet,
