@@ -44,7 +44,7 @@ function NavBar() {
         <a className="navbar-brand" href="/">
           {/* <span>DIACOOL</span> */}
           <Link className="navbar-brand d-flex align-items-center" to="/">
-              <div style={{ width: '120px', height: '60px' }}>
+              <div style={{ width: '150px', height: '75px' }}>
                 <img src={Diakool} style={{objectFit:"cover"}} alt="Diakool Logo"  />
               </div>
             </Link>
@@ -112,7 +112,7 @@ function NavBar() {
                     Features
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="departments">
                     Hot
                   </Link>
@@ -121,7 +121,7 @@ function NavBar() {
                   <Link className="nav-link" to="doctors">
                     Heads
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link className="nav-link" to="blogs">
                     Blogs

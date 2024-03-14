@@ -63,7 +63,7 @@ function OurRecord() {
           </div>
           <div className="col-lg-6">
             <div className="about-avatar">
-              <img src='/images/wifipic.jpg' title alt />
+              <img src='/images/duct.png' title alt />
             </div>
           </div>
         </div>

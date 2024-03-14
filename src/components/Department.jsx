@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Department(){
     return(
@@ -15,6 +16,7 @@ function Department(){
             </div>
             <div className="row">
               <div className="col-md-3">
+              <Link to="/productlisting?type=Split%20AC">
                 <div className="box ">
                   <div className="img-box">
                     <img src="images/airconditioner.png" alt />
@@ -28,6 +30,7 @@ function Department(){
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
               <div className="col-md-3">
                 <div className="box ">

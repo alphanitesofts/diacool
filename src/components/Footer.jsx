@@ -15,7 +15,7 @@ function Footer() {
                   target="_blank">
                   <i className="fa fa-map-marker" aria-hidden="true" />
                   <span>
-                    Amman Street - INDUSTRIAL AREA 2 - Ajman - United Arab Emirates
+                    Amman Street - INDUSTRIAL AREA 2 - Ajman - Dubai
                   </span>
                 </a>
                 <a href="tel:+971505735436">
@@ -34,17 +34,19 @@ function Footer() {
             </div>
             <div className="footer_social">
               <a href="https://www.facebook.com/profile.php?id=61554996632615&mibextid=9R9pXO" target="_blank">
-                <i className="fa fa-facebook" aria-hidden="true" />
-              </a>
-              <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">
-                <i className="fa fa-youtube" aria-hidden="true" style={{ color: "white" }} />
-              </a>
-              <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">
-                <i className="fa fa-linkedin" aria-hidden="true" />
+                <i className="fa fa-facebook" aria-hidden="true"  />
               </a>
               <a href="https://www.instagram.com/diakool_airconditioners/" target="_blank">
                 <i className="fa fa-instagram" aria-hidden="true" />
               </a>
+
+              <a href="https://www.youtube.com/channel/UCpyCCBRs_mJgmPZThPY-MMA" target="_blank">
+                <i className="fa fa-youtube " aria-hidden="true" style={{ color: "white" }} />
+              </a>
+              <a href="https://www.linkedin.com/in/diakool-air-conditioners-b206072a2/" target="_blank">
+                <i className="fa fa-linkedin" aria-hidden="true" />
+              </a>
+         
             </div>
           </div>
           <div className="col-md-6 col-lg-3 footer_col">
@@ -63,19 +65,19 @@ function Footer() {
                 Links
               </h4>
               <div className="footer_links">
-                <a className="active" href="index.html">
+                <a className="active" href="/">
                   Home
                 </a>
-                <a className href="about.html">
+                <a className href="/about">
                   About
                 </a>
-                <a className href="departments.html">
+                {/* <a className href="/departments">
                   Departments
-                </a>
-                <a className href="doctors.html">
+                </a> */}
+                {/* <a className href="doctors.html">
                   Doctors
-                </a>
-                <a className href="contact.html">
+                </a> */}
+                <a className href="/contact">
                   Contact Us
                 </a>
               </div>
@@ -96,7 +98,7 @@ function Footer() {
         <div className="footer-info">
           <p>
             © <span id="displayYear" /> 2014 Copyright All Rights Reserved By
-            <a href="https://html.design/">Diacool</a>
+            <a href="https://html.design/">DiaKool</a>
           </p>
         </div>
       </div>

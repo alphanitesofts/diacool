@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './shopStyle.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import fetchData from './AdvanceSearchSlice';
 
 const imageUrl = 'https://supercoolacimages.alphanitesofts.net/';
@@ -9,8 +9,14 @@ const ProductListing = () => {
     const acCategories = ['Window AC', 'Portable AC', 'Floor Standing AC', 'Cassette AC', 'Light Commercial AC - Duct Type', 'Air Curtain', 'Split AC'];
     const CapacityBTU = ['9000-12000 BTUs', '12000-18000 BTUs', '18000-24000 BTUs', '24000-30000 BTUs', '30000-36000 BTUs', '36000-48000 BTUs', '48000-60000 BTUs', '70000 BTUs & above'];
     const compressorType = ['Reciprocating', 'Scroll', 'Rotary', 'Inverter'];
+  
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const selectedType = queryParams.get("type");
+    // State to store the products returned
 
-    const [selectedACType, setSelectedACType] = useState([]);
+    // alert(selectedType)
+    const [selectedACType, setSelectedACType] = useState(selectedType ? [selectedType] : []);
     const [selectedCapacityBTU, setSelectedCapacityBTU] = useState([]);
     const [selectedCompressorType, setSelectedCompressorType] = useState([]);
     const [visibleProducts, setVisibleProducts] = useState(100);
@@ -18,9 +24,12 @@ const ProductListing = () => {
     const [allAcs, setAllAcs] = useState([]);
     const [filteredAcs, setFilteredAcs] = useState([]);
 
-    const toggleFilter = () => {
+  const toggleFilter = () => {
         setIsFilterVisible(!isFilterVisible);
     };
+
+  
+    
 
     const handleACTypeChange = (value) => {
         setSelectedACType(value);
@@ -53,14 +62,14 @@ const ProductListing = () => {
         try {
             const data = await fetchData();
             if (data !== null) {
-                // console.log(data)
                 setAllAcs(data.data);
-                setFilteredAcs(data.data); // Set the filtered data initially to all data
+                setFilteredAcs(data.data);
             }
         } catch (error) {
             console.error('Error:', error.message);
         }
     }
+
     const splitACs = [];
     const otherACs = [];
 
@@ -72,13 +81,12 @@ const ProductListing = () => {
         }
     });
 
+    
     const combinedProducts = [...splitACs, ...otherACs];
 
     useEffect(() => {
         fetchDataAndProcess();
     }, []);
-
-
 
     return (
         <section className="category-section" id="catergory-selection">

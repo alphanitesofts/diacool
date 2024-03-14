@@ -80,7 +80,7 @@ function Home() {
       <Department />
       <About />
       <OurRecord />
-      <ChooseUs />
+      {/* <ChooseUs /> */}
       <ExtraOne />
       <ExtraTwo />
       <Services />
